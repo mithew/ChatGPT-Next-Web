@@ -2,9 +2,9 @@ import fetch from "node-fetch";
 import fs from "fs/promises";
 
 const RAW_FILE_URL = "https://raw.githubusercontent.com/";
-const MIRRORF_FILE_URL = "https://raw.fgit.ml/";
+const MIRRORF_FILE_URL = "https://raw.hoooo.cyou/";
 
-const RAW_CN_URL = "prompts-zh.json";
+const RAW_CN_URL = "mithew/1/main/prompts-zh.json";
 const CN_URL = MIRRORF_FILE_URL + RAW_CN_URL;
 const RAW_EN_URL = "prompts.csv";
 const EN_URL = MIRRORF_FILE_URL + RAW_EN_URL;
