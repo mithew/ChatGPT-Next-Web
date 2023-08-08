@@ -23,30 +23,30 @@ export enum Theme {
 export const DEFAULT_CONFIG = {
   submitKey: SubmitKey.CtrlEnter as SubmitKey,
   avatar: "1f603",
-  fontSize: 14,
+  fontSize: 16,
   theme: Theme.Auto as Theme,
   tightBorder: !!getClientConfig()?.isApp,
-  sendPreviewBubble: true,
+  sendPreviewBubble: false,
   sidebarWidth: 300,
 
-  disablePromptHint: false,
+  disablePromptHint: true,
 
-  dontShowMaskSplashScreen: false, // dont show splash screen when create chat
-  hideBuiltinMasks: false, // dont add builtin masks
+  dontShowMaskSplashScreen: true, // dont show splash screen when create chat
+  hideBuiltinMasks: true, // dont add builtin masks
 
   customModels: "",
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
     model: "gpt-3.5-turbo" as ModelType,
-    temperature: 0.5,
+    temperature: 0.9,
     top_p: 1,
-    max_tokens: 2000,
+    max_tokens: 1200,
     presence_penalty: 0,
     frequency_penalty: 0,
-    sendMemory: true,
-    historyMessageCount: 4,
-    compressMessageLengthThreshold: 1000,
+    sendMemory: false,
+    historyMessageCount: 0,
+    compressMessageLengthThreshold: 99000,
     enableInjectSystemPrompts: true,
     template: DEFAULT_INPUT_TEMPLATE,
   },
@@ -152,14 +152,14 @@ export const useAppConfig = create<ChatConfigStore>()(
         const state = persistedState as ChatConfig;
 
         if (version < 3.4) {
-          state.modelConfig.sendMemory = true;
-          state.modelConfig.historyMessageCount = 4;
-          state.modelConfig.compressMessageLengthThreshold = 1000;
+          state.modelConfig.sendMemory = false;
+          state.modelConfig.historyMessageCount = 0;
+          state.modelConfig.compressMessageLengthThreshold = 99000;
           state.modelConfig.frequency_penalty = 0;
           state.modelConfig.top_p = 1;
           state.modelConfig.template = DEFAULT_INPUT_TEMPLATE;
-          state.dontShowMaskSplashScreen = false;
-          state.hideBuiltinMasks = false;
+          state.dontShowMaskSplashScreen = true;
+          state.hideBuiltinMasks = true;
         }
 
         if (version < 3.5) {
