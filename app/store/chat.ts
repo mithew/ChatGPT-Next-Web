@@ -602,9 +602,9 @@ export const useChatStore = create<ChatStore>()(
             const newSession = createEmptySession();
             newSession.topic = oldSession.topic;
             newSession.messages = [...oldSession.messages];
-            newSession.mask.modelConfig.sendMemory = true;
-            newSession.mask.modelConfig.historyMessageCount = 4;
-            newSession.mask.modelConfig.compressMessageLengthThreshold = 1000;
+            newSession.mask.modelConfig.sendMemory = false;
+            newSession.mask.modelConfig.historyMessageCount = 0;
+            newSession.mask.modelConfig.compressMessageLengthThreshold = 99000;
             newState.sessions.push(newSession);
           }
         }
