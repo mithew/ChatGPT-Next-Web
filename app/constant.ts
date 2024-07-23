@@ -208,8 +208,6 @@ const openaiModels = [
   "claude-3-opus-20240229",
   "claude-3-haiku-20240307",
   "claude-3-5-sonnet-20240620",
-  "gemini-1.5-pro-latest",
-  "gemini-1.5-flash-latest",
 ];
 
 const googleModels = [
@@ -244,7 +242,7 @@ export const DEFAULT_MODELS = [
   })),
   ...openaiModels.map((name) => ({
     name,
-    available: true,
+    available: false,
     provider: {
       id: "azure",
       providerName: "Azure",
@@ -253,7 +251,7 @@ export const DEFAULT_MODELS = [
   })),
   ...googleModels.map((name) => ({
     name,
-    available: true,
+    available: false,
     provider: {
       id: "google",
       providerName: "Google",
@@ -262,7 +260,7 @@ export const DEFAULT_MODELS = [
   })),
   ...anthropicModels.map((name) => ({
     name,
-    available: true,
+    available: false,
     provider: {
       id: "anthropic",
       providerName: "Anthropic",
@@ -271,7 +269,7 @@ export const DEFAULT_MODELS = [
   })),
   ...baiduModels.map((name) => ({
     name,
-    available: true,
+    available: false,
     provider: {
       id: "baidu",
       providerName: "Baidu",
@@ -280,7 +278,7 @@ export const DEFAULT_MODELS = [
   })),
   ...bytedanceModels.map((name) => ({
     name,
-    available: true,
+    available: false,
     provider: {
       id: "bytedance",
       providerName: "ByteDance",
@@ -289,7 +287,7 @@ export const DEFAULT_MODELS = [
   })),
   ...alibabaModes.map((name) => ({
     name,
-    available: true,
+    available: false,
     provider: {
       id: "alibaba",
       providerName: "Alibaba",
