@@ -30,35 +30,35 @@ const config = getClientConfig();
 export const DEFAULT_CONFIG = {
   lastUpdate: Date.now(), // timestamp, to merge state
 
-  submitKey: SubmitKey.Enter,
+  submitKey: SubmitKey.CtrlEnter,
   avatar: "1f603",
   fontSize: 14,
   theme: Theme.Auto as Theme,
   tightBorder: !!config?.isApp,
-  sendPreviewBubble: true,
+  sendPreviewBubble: false,
   enableAutoGenerateTitle: true,
   sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
 
-  disablePromptHint: false,
+  disablePromptHint: true,
 
-  dontShowMaskSplashScreen: false, // dont show splash screen when create chat
-  hideBuiltinMasks: false, // dont add builtin masks
+  dontShowMaskSplashScreen: true, // dont show splash screen when create chat
+  hideBuiltinMasks: true, // dont add builtin masks
 
   customModels: "",
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "gpt-3.5-turbo" as ModelType,
+    model: "gpt-4o-mini" as ModelType,
     providerName: "OpenAI" as ServiceProvider,
-    temperature: 0.5,
+    temperature: 0.8,
     top_p: 1,
     max_tokens: 4000,
     presence_penalty: 0,
     frequency_penalty: 0,
-    sendMemory: true,
-    historyMessageCount: 4,
-    compressMessageLengthThreshold: 1000,
-    enableInjectSystemPrompts: true,
+    sendMemory: false,
+    historyMessageCount: 0,
+    compressMessageLengthThreshold: 9999000,
+    enableInjectSystemPrompts: false,
     template: config?.template ?? DEFAULT_INPUT_TEMPLATE,
   },
 };
