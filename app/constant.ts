@@ -241,60 +241,7 @@ export const DEFAULT_MODELS = [
     },
   })),
   ] as const;
-  ...openaiModels.map((name) => ({
-    name,
-    available: false,
-    provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
-    },
-  })),
-  ...googleModels.map((name) => ({
-    name,
-    available: false,
-    provider: {
-      id: "google",
-      providerName: "Google",
-      providerType: "google",
-    },
-  })),
-  ...anthropicModels.map((name) => ({
-    name,
-    available: false,
-    provider: {
-      id: "anthropic",
-      providerName: "Anthropic",
-      providerType: "anthropic",
-    },
-  })),
-  ...baiduModels.map((name) => ({
-    name,
-    available: false,
-    provider: {
-      id: "baidu",
-      providerName: "Baidu",
-      providerType: "baidu",
-    },
-  })),
-  ...bytedanceModels.map((name) => ({
-    name,
-    available: false,
-    provider: {
-      id: "bytedance",
-      providerName: "ByteDance",
-      providerType: "bytedance",
-    },
-  })),
-  ...alibabaModes.map((name) => ({
-    name,
-    available: false,
-    provider: {
-      id: "alibaba",
-      providerName: "Alibaba",
-      providerType: "alibaba",
-    },
-  })),
+
 
 
 export const CHAT_PAGE_SIZE = 15;
